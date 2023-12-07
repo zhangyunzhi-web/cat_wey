@@ -1,8 +1,12 @@
-import { app, shell, BrowserWindow } from 'electron'
-import { join } from 'path'
+import { app, shell, BrowserWindow, ipcMain, Notification, nativeImage } from 'electron'
+import type { NotificationConstructorOptions } from 'electron'
+import path, { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+import createTray from './tray'
+import dockMenu from './dock'
 
+const icon_path = path.join(__dirname, '..', '..', 'resources', 'cat.jpg')
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -34,11 +38,31 @@ function createWindow(): void {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
 }
-
+const noticeOptions: NotificationConstructorOptions = {
+  title: 'Notification',
+  body: 'Notification body',
+  icon: `/resources/icon.png`,
+  silent: false,
+  timeoutType: 'never',
+  actions: [
+    {
+      type: 'button',
+      text: 'Button'
+      // icon: `/resources/icon.png`,
+      // click: () => {
+      //   console.log('Button clicked')
+      // }
+    }
+  ]
+}
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  ipcMain.on('show-notice', () => {
+    const createNotice = new Notification(noticeOptions)
+    createNotice.show()
+  })
   // Set app user model id for windows
   electronApp.setAppUserModelId('com.electron')
 
@@ -48,8 +72,16 @@ app.whenReady().then(() => {
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window)
   })
-
-  createWindow()
+  app
+    .whenReady()
+    .then(() => {
+      if (process.platform === 'darwin') {
+        app.dock.setIcon(icon_path)
+        app.dock.setMenu(dockMenu)
+      }
+    })
+    .then(createWindow)
+  createTray()
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
