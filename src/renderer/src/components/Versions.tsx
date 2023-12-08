@@ -1,19 +1,12 @@
-import { useState } from 'react'
+// import PropTypes from 'prop-types'
+import React, { memo } from 'react'
 
-function Versions(): JSX.Element {
-  const [versions] = useState(window.electron.process.versions)
-  const showNotice = (): void => {
-    console.log(11111)
-    window.api.showNotice()
-  }
+const Versions = memo((props): JSX.Element => {
   return (
-    <ul className="versions">
-      <li className="electron-version" onClick={showNotice}>Electron v{versions.electron}</li>
-      <li className="chrome-version">Chromium v{versions.chrome}</li>
-      <li className="node-version">Node v{versions.node}</li>
-      <li className="v8-version">V8 v{versions.v8}</li>
-    </ul>
+    <div>Versions</div>
   )
-}
+})
+
+
 
 export default Versions

@@ -10,7 +10,9 @@ const icon_path = path.join(__dirname, '..', '..', 'resources', 'cat.jpg')
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
+    minWidth: 500,
     width: 900,
+    minHeight: 500,
     height: 670,
     show: false,
     autoHideMenuBar: true,
@@ -29,7 +31,7 @@ function createWindow(): void {
     shell.openExternal(details.url)
     return { action: 'deny' }
   })
-
+  mainWindow.setTitle('呜呜')
   // HMR for renderer base on electron-vite cli.
   // Load the remote URL for development or the local html file for production.
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
@@ -72,6 +74,9 @@ app.whenReady().then(() => {
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window)
   })
+  // setInterval(() => {
+  //   app.dock.bounce()
+  // }, 5000)
   app
     .whenReady()
     .then(() => {
