@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { Layout, Space } from 'antd';
+import { Layout } from 'antd';
 const { Sider, Content } = Layout;
 import LeftMenu from './components/leftMenu';
 

@@ -1,4 +1,4 @@
-import { app, shell, BrowserWindow, ipcMain, Notification, nativeImage } from 'electron'
+import { app, shell, BrowserWindow, ipcMain, Notification } from 'electron'
 import type { NotificationConstructorOptions } from 'electron'
 import path, { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
