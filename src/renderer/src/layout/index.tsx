@@ -1,15 +1,13 @@
-import React, { memo } from 'react'
+import React, { Suspense, memo } from 'react'
 import { Layout } from 'antd';
-const { Sider, Content } = Layout;
+const { Sider } = Layout;
 import LeftMenu from './components/leftMenu';
 
+import { useRoutes } from 'react-router-dom';
+import routes from '@renderer/router';
 
-const contentStyle: React.CSSProperties = {
-  textAlign: 'center',
-  lineHeight: '120px',
-  color: '#fff',
-  backgroundColor: '#108ee9',
-};
+
+
 
 const siderStyle: React.CSSProperties = {
   textAlign: 'center',
@@ -24,7 +22,11 @@ const zLayout = memo(() => {
     <Layout>
       <Sider style={siderStyle}><LeftMenu></LeftMenu></Sider>
       <Layout>
-        <Content style={contentStyle}>Content</Content>
+        {/* <Content style={contentStyle}><Turnplate></Turnplate></Content> */}
+
+        <Suspense fallback="">
+          <div className="main">{useRoutes(routes)}</div>
+        </Suspense>
       </Layout>
     </Layout >
   )

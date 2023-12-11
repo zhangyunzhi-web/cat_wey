@@ -3,6 +3,7 @@ import React, { memo } from 'react'
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
+import { Link } from 'react-router-dom';
 type MenuItem = Required<MenuProps>['items'][number];
 
 function getItem(
@@ -23,8 +24,8 @@ function getItem(
 
 const items: MenuProps['items'] = [
   getItem('Navigation One', 'sub1', <MailOutlined />, [
-    getItem('Item 1', 'g1', null, [getItem('Option 1', '1'), getItem('Option 2', '2')], 'group'),
-    getItem('Item 2', 'g2', null, [getItem('Option 3', '3'), getItem('Option 4', '4')], 'group'),
+    getItem('', 'g1', null, [getItem(<Link to="/turnplate">抽奖</Link>, '1'), getItem('Option 2', '2')], 'group'),
+    getItem('', 'g2', null, [getItem(<Link to="/welcome">欢迎</Link>, '3'), getItem('Option 4', '4')], 'group'),
   ]),
 
   getItem('Navigation Two', 'sub2', <AppstoreOutlined />, [
