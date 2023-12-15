@@ -5,7 +5,7 @@ import LeftMenu from './components/leftMenu';
 
 import { useRoutes } from 'react-router-dom';
 import routes from '@renderer/router';
-
+import { MainContainer } from './style'
 
 
 
@@ -25,7 +25,7 @@ const zLayout = memo(() => {
         {/* <Content style={contentStyle}><Turnplate></Turnplate></Content> */}
 
         <Suspense fallback="">
-          <div className="main">{useRoutes(routes)}</div>
+          <MainContainer>{useRoutes(routes)}</MainContainer>
         </Suspense>
       </Layout>
     </Layout >

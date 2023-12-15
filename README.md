@@ -1,34 +1,7 @@
-# cat_wey
+# 1.0.0
 
-An Electron application with React and TypeScript
-
-## Recommended IDE Setup
-
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
-## Project Setup
-
-### Install
-
-```bash
-$ pnpm install
-```
-
-### Development
-
-```bash
-$ pnpm dev
-```
-
-### Build
-
-```bash
-# For windows
-$ pnpm build:win
-
-# For macOS
-$ pnpm build:mac
-
-# For Linux
-$ pnpm build:linux
-```
+- 1. 吃饭选择困难 =》 转盘选择
+- 2. 桌宠
+- 3. 聊天
+- 4. 接chatgpt =》聊天机器人 =》桌宠只互动不聊天？
+- 5. 接入cesium
