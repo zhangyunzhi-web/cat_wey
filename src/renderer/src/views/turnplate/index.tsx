@@ -18,6 +18,7 @@ const Turnplate = memo(() => {
     '大棒骨',
     '猪肘饭',
     '麻辣烫',
+    '炸串'
   ]
   useEffect(() => {
     setMeal(mealList[Math.floor(Math.random() * mealList.length)])
@@ -27,7 +28,7 @@ const Turnplate = memo(() => {
   }
 
   return (
-    <StyledContainer onClick={changeMeal}>{Meal}</StyledContainer>
+    <StyledContainer className='text-red-600' onClick={changeMeal}>{Meal}</StyledContainer>
   )
 })
 
