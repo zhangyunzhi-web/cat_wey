@@ -25,6 +25,7 @@
     "@electron-toolkit/utils": "^2.0.0",
     "@reduxjs/toolkit": "^2.0.1",
     "antd": "^5.12.1",
+    "cesium": "^1.112.0",
     "electron-updater": "^6.1.1",
     "prop-types": "^15.8.1",
     "react-redux": "^9.0.2",
@@ -35,6 +36,7 @@
     "@electron-toolkit/eslint-config-prettier": "^1.0.1",
     "@electron-toolkit/eslint-config-ts": "^1.0.0",
     "@electron-toolkit/tsconfig": "^1.0.1",
+    "@types/cesium": "^1.70.0",
     "@types/node": "^18.17.5",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
@@ -53,6 +55,7 @@
     "styled-components": "^6.1.1",
     "tailwindcss": "^3.3.7",
     "typescript": "^5.1.6",
-    "vite": "^4.4.9"
+    "vite": "^4.4.9",
+    "vite-plugin-cesium": "^1.2.22"
   }
 }

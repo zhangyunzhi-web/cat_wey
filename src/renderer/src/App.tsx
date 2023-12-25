@@ -1,7 +1,6 @@
 import React, { memo } from 'react'
 import ZLayout from './layout/index'
 
-// import routes from './router'
 
 const App = memo(() => {
   return (

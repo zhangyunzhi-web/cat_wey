@@ -7,7 +7,6 @@ import store from './store'
 import { ThemeProvider } from 'styled-components'
 import theme from './assets/theme'
 import '@renderer/assets/css/index.less'
-
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
