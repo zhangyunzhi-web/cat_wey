@@ -280,9 +280,9 @@ function loadFlyController() {
 
   var timeLineBar = document.getElementsByClassName('cesium-timeline-bar')
   if (timeLineBar.length > 0) {
-    timeLineBar = timeLineBar[0]
-    timeLineBar.addEventListener('DOMNodeInserted', function (e) {
-      e = e || event
+    timeLineBar = timeLineBar[0] as unknown as HTMLCollectionOf<Element>
+    ;(timeLineBar as unknown as Element).addEventListener('DOMNodeInserted', function (e) {
+      e = e
       if (e.target.nodeType == 3) return
       if (e.target.getAttribute('class') == 'cesium-timeline-ticLabel') {
         var texts = e.target.innerHTML.split(' ')

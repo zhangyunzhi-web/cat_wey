@@ -15,7 +15,7 @@ const Welcome: React.FC = memo(() => {
       infoBox: false,
       //duration: 3
     });
-    viewer.cesiumWidget.creditContainer.style.display = "none";
+    viewer.cesiumWidget.creditContainer.style!.display = "none";
     CesiumZh.load();
   }, [])
 

@@ -43,7 +43,7 @@ const items: MenuProps['items'] = [
     getItem('Option 12', '12'),
   ]),
 
-  getItem('Group', 'grp', null, [getItem('Option 13', '13'), getItem('Option 14', '14')], 'group'),
+  getItem('Group', 'grp', null, [getItem(<Link to='/grid'>Grid布局</Link>, '13'), getItem('Option 14', '14')], 'group'),
 ];
 const leftMenu = memo(() => {
   const onClick: MenuProps['onClick'] = (e) => {
@@ -55,7 +55,7 @@ const leftMenu = memo(() => {
       style={{
         width: 200, height: '100vh', overflowY: 'auto'
       }}
-      defaultSelectedKeys={['1']}
+      defaultSelectedKeys={['3']}
       defaultOpenKeys={['sub1']}
       mode="inline"
       items={items}

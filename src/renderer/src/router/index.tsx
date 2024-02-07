@@ -4,6 +4,7 @@ import { Navigate } from 'react-router-dom'
 
 const Turnplate = React.lazy(() => import('@renderer/views/turnplate'))
 const Welcome = React.lazy(() => import('@renderer/views/welcome'))
+const Grid = React.lazy(() => import('@renderer/views/test/grid'))
 
 const routes: RouteObject[] = [
   {
@@ -17,6 +18,10 @@ const routes: RouteObject[] = [
   {
     path: '/welcome',
     element: <Welcome />
+  },
+  {
+    path: '/grid',
+    element: <Grid />
   }
 ]
 export default routes
